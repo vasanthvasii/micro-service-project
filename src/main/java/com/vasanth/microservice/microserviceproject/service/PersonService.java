@@ -20,4 +20,12 @@ public class PersonService {
     public List<Person> listOfPerson() {
         return personRepo.findAll();
     }
+
+    public Person addPerson(Person person) {
+        return personRepo.save(person);
+    }
+
+    public void deletePersonById(int personId) {
+        personRepo.deleteById(personId);
+    }
 }
