@@ -1,9 +1,12 @@
 package com.vasanth.microservice.microserviceproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "orders")
 public class Order implements Serializable {
     private static final long serialVersionUID=1L;
 
@@ -18,7 +21,8 @@ public class Order implements Serializable {
     private int purchaseAmt;
 
 
-    @ManyToMany
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
 

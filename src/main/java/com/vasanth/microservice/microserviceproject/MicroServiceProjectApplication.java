@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroServiceProjectApplication implements CommandLineRunner {
+public class MicroServiceProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MicroServiceProjectApplication.class, args);
@@ -21,7 +21,7 @@ public class MicroServiceProjectApplication implements CommandLineRunner {
 
 	@Autowired
 	OrderRepository orderRepository;
-
+/*
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -40,4 +40,6 @@ public class MicroServiceProjectApplication implements CommandLineRunner {
 		orderRepository.save(ord3);
 
 	}
+
+ */
 }

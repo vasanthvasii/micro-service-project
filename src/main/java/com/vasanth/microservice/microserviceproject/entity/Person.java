@@ -31,12 +31,14 @@ public class Person implements Serializable {
 
     public Person() {
     }
-
+/*
     public Person(String firstName, String lastName, String city) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
     }
+
+ */
 
     public int getId() {
         return id;
