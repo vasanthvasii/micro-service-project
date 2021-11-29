@@ -1,6 +1,7 @@
 package com.vasanth.microservice.microserviceproject.service;
 
 import com.vasanth.microservice.microserviceproject.entity.Person;
+import com.vasanth.microservice.microserviceproject.exception.ResourceNotFound;
 import com.vasanth.microservice.microserviceproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,9 @@ public class PersonService {
     PersonRepository personRepo;
 
     public Person personDataById(int id){
-        return personRepo.findById(id).get();
+        //return personRepo.findById(id).get();
+       Person person= personRepo.findById(id).orElseThrow(()-> new ResourceNotFound("Record Not found"));
+        return person;
     }
 
     public List<Person> listOfPerson() {
